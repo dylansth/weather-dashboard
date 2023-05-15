@@ -19,6 +19,13 @@ function weatherPrompt(cityName) {
     var weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey;
         fetch(weatherUrl)
 
+    .then(function (response) {
+        if (response.status !== 200) {
+            throw Error("City not found!");
+        }
+        return response.json();
+    })
+
     .then(function (data){
         todaysWeather.classList.remove("d-none");
         thisweekHeader.classList.remove("d-none");
@@ -78,6 +85,10 @@ function weatherPrompt(cityName) {
         forecastEls[i].append(forecasthumidityEl);
         }
     })
+
+.catch(function (error) {
+    alert(error);
+    });
 }
 
 function k2f(K) {
