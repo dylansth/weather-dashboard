@@ -1,6 +1,6 @@
 # Weather Dashboard
 
-Deployed Site: https://grown-simba.github.io/weather-dashboard/
+Deployed Site: https://dylansth.github.io/weather-dashboard/
 
 ## Usage
 
